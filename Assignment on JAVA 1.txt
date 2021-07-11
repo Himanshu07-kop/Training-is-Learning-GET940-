@@ -1,0 +1,203 @@
+-------------------------------------------------------------------------------------------------
+Assignment 1:
+
+import java.util.*;
+public class ElectricityBill {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		long units;
+		
+		Scanner sc=new Scanner(System.in);
+		 
+		System.out.println("enter number of units");  
+          units=sc.nextLong();
+          
+        CalculateElectricityBill b = new CalculateElectricityBill(units);                                             
+        System.out.println("Bill to pay : " + b.billpay); 
+	}
+
+}
+
+class CalculateElectricityBill
+{	
+	double billpay;
+	
+ 
+	CalculateElectricityBill(long units)
+	{
+  	  if(units<100)
+		billpay=units*1.20;
+	  else if(units<=300)
+		billpay=100*1.20+(units-100)*2;
+	  else if(units>300)
+		billpay=100*1.20+200 *2+(units-300)*3;
+	     
+         }	
+}
+
+
+OUTPUT: enter number of units
+        102
+        Bill to pay : 124.0
+
+-------------------------------------------------------------------------------------------------------
+Assignment 2: & Assignment 3:
+
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+public class Innings
+{
+	public static void main(String args[])
+	{
+		Random rn=new Random();
+		int total=0;
+		int zeros=0;
+		int ones=0;
+		int twos=0;
+		int threes=0;
+		int fours=0;
+		int sixes=0;
+		double rr=0;
+		
+	int run[]=new int[30];
+	for(int i:run)
+	{
+		run[i]=rn.nextInt(7);
+		total=total+run[i];
+		if(run[i]==0)
+			zeros++;
+		else if(run[i]==1)
+			ones++;
+		else if(run[i]==2)
+			twos++;
+		else if(run[i]==3)
+			threes++;
+		else if(run[i]==4)
+			fours++;
+		else if(run[i]==6)
+			sixes++;
+		
+		System.out.println(run[i]);
+	}
+	rr=total/30;
+	System.out.println("Total runs scored in 5 overs:"+total);
+	System.out.println("NO of 0's:"+zeros);
+	System.out.println("NO of 1's:"+ones);
+	System.out.println("NO of 2's:"+twos);
+	System.out.println("NO of 3's:"+threes);
+	System.out.println("NO of 4's:"+fours);
+	System.out.println("NO of 6's:"+sixes);
+	System.out.println("Strike Rate:"+total/30);
+	
+	}
+
+}
+
+OUTPUT : 
+1
+5
+0
+2
+2
+1
+5
+1
+4
+5
+0
+1
+6
+4
+3
+4
+2
+2
+6
+1
+6
+3
+5
+2
+0
+2
+3
+0
+4
+0
+Total runs scored in 5 overs:80
+NO of 0's:5
+NO of 1's:5
+NO of 2's:6
+NO of 3's:3
+NO of 4's:4
+NO of 6's:3
+Strike Rate:2
+
+-----------------------------------------------------------------------------------------------------------------
+Assignment 5:
+
+import java.util.*;
+public class Bank {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Account a = new Account(1234,70000,"pa$$");
+			a.display();
+
+	}
+
+}
+
+ class Account 
+{
+	private int accountNo;
+	private int accountBalance;
+	private String accountPassword;
+    String bankName="HDFC";
+    
+    public Account(int accountNo,int accountBalance,String accountPassword)
+    {
+  	  this.accountNo=accountNo;
+  	  this.accountBalance=accountBalance;
+  	  this.accountPassword=accountPassword;
+    }
+    
+    
+	public int getAccountNo() {
+		return accountNo;
+	}
+	public void setAccountNo(int accountNo) {
+		this.accountNo = accountNo;
+	}
+	public int getAccountBalance() {
+		return accountBalance;
+	}
+	public void setAccountBalance(int accountBalance) {
+		this.accountBalance = accountBalance;
+	}
+	public String getAccountPassword() {
+		return accountPassword;
+	}
+	public void setAccountPassword(String accountPassword) {
+		this.accountPassword = accountPassword;
+	}
+	
+	void display()
+    {
+   	System.out.println("Welcome to the "+bankName+" Bank"); 
+   	System.out.println("Your account no is:"+accountNo);
+   	System.out.println("Your accoutn Balance is:"+accountBalance);
+   	System.out.println("Your accountPassword is:"+accountPassword);
+   }
+}
+
+OUTPUT :
+Welcome to the HDFC Bank
+Your account no is:1234
+YOur accoutn Balance is:70000
+Your accountPassword is:pa$$
+
+--------------------------------------------------------------------------------------------------------------
